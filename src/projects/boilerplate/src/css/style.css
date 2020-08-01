@@ -1,0 +1,38 @@
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: Cinzel, Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a, button, input {
+  font-family: Cinzel, Arial, Helvetica, sans-serif;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none!important;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.page-wrapper {
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 30px;
+}
+
+.container {
+  padding-bottom: 30px;
+}
