@@ -11,7 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp -f gulpfile.js build",
     "watch": "gulp -f gulpfile.js watch",
-    "dev": "concurrently 'npm:watch'"
+    "dev": "concurrently 'npm:watch'",
+    "cli": "node ./cli.js"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +28,7 @@
     "gulp-include": "2.4.1",
     "gulp-minifier": "3.5.0",
     "http-server": "0.12.3",
+    "inquirer": "7.3.3",
     "regenerator-runtime": "0.13.7",
     "rollup": "2.23.0",
     "@rollup/plugin-babel": "5.1.0",
