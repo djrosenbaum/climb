@@ -26,15 +26,15 @@ button {
   width: 100%;
 }
 
-h1 {
-  font-size: 21px;
-}
-
 input {
   box-sizing: border-box;
   font-size: 36px;
   margin-bottom: 40px;
   width: 100%;
+}
+
+label {
+  font-size: 21px;
 }
 
 .hidden {

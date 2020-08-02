@@ -1,0 +1,35 @@
+{
+  "title": "climb",
+  "description": "press your luck to be the first to reach the peak",
+  "anchor": "some climber id",
+  "dice": "the dice",
+  "game": "game id",
+  "host": "todo: some host reference",
+  "climbers": ["array of climbers"],
+  "climber": {
+    "status": "0|1",
+    "name": "the players name",
+    "cards": ["array of cards owned by climber"],
+    "decisions": ["decision from every round"]
+  },
+  "quorum": "minimum number of players required to start a game",
+  "party": ["party sits inside of game"]
+}
+
+// CLIMB - press your luck to be the first to reach the peak
+
+// • Host selects game
+// • Climbers receive room code
+// • All climbers in the party are ready to climb
+// • Climbers are placed in order
+// • Each climber receives equipment cards
+// • At the start of the turn one climber (the anchor) is selected. All other climbers decide to risk whether the anchor will have or will not have the right equipment
+// • Dice are rolled (more dice rolled as climbers go higher during a round)
+// • The anchor must play equipment cards to satisfy the dice roll
+// • If the anchor satisfies the dice roll, all climbers who pressed their luck move up to the next tier. If the dice roll is not satisfied, all climbers who stuck around rappel back down to where they left off at the beginning of the round
+
+// some thoughts on details
+// dice can include no equipment needed
+// wild cards can satisfy any equipment
+// the anchor is not able to opt out
+
