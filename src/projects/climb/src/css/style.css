@@ -64,3 +64,12 @@ label {
 .container {
   padding-bottom: 30px;
 }
+
+.bold {
+  font-weight: bold;
+}
+
+.bold.link {
+  font-weight: 700;
+  padding: 10px 0;
+}
