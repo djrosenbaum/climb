@@ -44,6 +44,7 @@ function setPlayerName(snapshot) {
   }).then((data) => {
     console.log('player set', app.playerKey);
     app.playerKey = data.getKey();
+    displayScreen('lobby');
   });
 }
 
