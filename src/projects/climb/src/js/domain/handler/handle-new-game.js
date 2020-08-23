@@ -9,6 +9,8 @@ export default async function handleNewGame() {
   app.roomCode = getRoomCode();
   app.room = firebase.database().ref(`rooms/${app.roomCode}`);
 
+  app.room.onDisconnect().remove();
+
   app.room.set({
     status: 'waiting',
   }).then(() => {
