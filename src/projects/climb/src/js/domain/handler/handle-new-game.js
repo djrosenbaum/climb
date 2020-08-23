@@ -1,5 +1,5 @@
 import app from '../app';
-import displayScreen from '../markup/display-screen';
+import enterRoom from '../enter-room';
 
 export default async function handleNewGame() {
   if (app.roomCode) {
@@ -7,12 +7,13 @@ export default async function handleNewGame() {
   }
 
   app.roomCode = getRoomCode();
-  const rooms = firebase.database().ref(`rooms/${app.roomCode}`);
-  rooms.set({
+  app.room = firebase.database().ref(`rooms/${app.roomCode}`);
+
+  app.room.set({
     status: 'waiting',
   }).then(() => {
     document.querySelector('[data-screen="lobby"] .room-code').innerText = app.roomCode;
-    displayScreen('lobby');
+    enterRoom('lobby');
   });
 }
 

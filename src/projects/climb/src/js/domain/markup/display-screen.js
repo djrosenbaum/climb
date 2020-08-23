@@ -1,4 +1,4 @@
-export default async function displayScreen(screen) {
+export default function displayScreen(screen) {
   console.log('display screen', screen);
   document.querySelectorAll('[data-screen]').forEach(item => {
     item.classList.add('hidden');

@@ -1,5 +1,5 @@
 import app from '../app';
-import displayScreen from '../markup/display-screen';
+import enterRoom from '../enter-room';
 
 export default async function handleJoinGame() {
   console.log('handling join game');
@@ -44,14 +44,14 @@ function setPlayerName(snapshot) {
   }).then((data) => {
     console.log('player set', app.playerKey);
     app.playerKey = data.getKey();
-    displayScreen('lobby');
+    enterRoom('lobby');
   });
 }
 
 function getRoomCode() {
   console.log('get room code');
   let roomCode = document.querySelector('[data-input="room-code"]').value;  
-  return roomCode.toLowerCase(); 
+  return roomCode.toLowerCase();
 }
 
 function getPlayerName() {
