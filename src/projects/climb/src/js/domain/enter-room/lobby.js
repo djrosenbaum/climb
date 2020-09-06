@@ -1,4 +1,5 @@
 import app from "../app";
+import enterRoom from '.';
 
 export default function enterLobby() {
   console.log('hello i am in the lobby');
@@ -17,12 +18,24 @@ function getAndSetPlayerList() {
     if (!snapshot.toJSON().players) {
       showEveryoneIsReadyButton();
     }
-    app.room.child('players').on('value', snapshot => {
-      const playerList = snapshot.exists() ? snapshot.toJSON() : {};
-      console.log('snapshot', playerList);
-      updatePlayerList(playerList);
-    });
+    app.room.child('players').on('value', onPlayerListUpdated);
+    app.room.child('status').on('value', onStatusUpdated);
   });
+}
+
+function onPlayerListUpdated(snapshot) {
+  const playerList = snapshot.exists() ? snapshot.toJSON() : {};
+  console.log('snapshot', playerList);
+  updatePlayerList(playerList);
+}
+
+function onStatusUpdated(snapshot) {
+  console.log('on status updated snapshot:', snapshot);
+  const status = snapshot.toJSON();
+  if (status === 'rules') {
+    console.log('start the game!');
+    enterRoom('rules');
+  }
 }
 
 function updatePlayerList(playerList) {
