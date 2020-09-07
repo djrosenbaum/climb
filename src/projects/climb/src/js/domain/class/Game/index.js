@@ -1,10 +1,10 @@
-import { Room } from '../Room';
+import { Host } from '../Host';
 
 function Game() {
-  const room = new Room();
+  const host = new Host();
 
   return {
-    room,
+    host,
   }
 }
 

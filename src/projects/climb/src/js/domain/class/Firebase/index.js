@@ -1,5 +1,0 @@
-function Firebase() {}
-
-export {
-  Firebase,
-}

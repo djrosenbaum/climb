@@ -1,12 +1,12 @@
 import { app } from '../app';
-import { Game } from '../class/game';
+import { Host } from '../class/Host';
 
 let canCreateNewGame = true;
 
 function newGame() {
   if (canCreateNewGame) {
     canCreateNewGame = false;
-    app.game = new Game();
+    app.host = new Host();
   }
 }
 
