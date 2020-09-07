@@ -1,13 +1,15 @@
-import { renderLobby } from './render-lobby';
+import { host } from './host';
+import { player } from './player';
 
-function render(screen) {
-  console.log('render:', screen);
-  
-  const rooms = {
-    lobby: renderLobby
+function render({ playerType, screen }) {
+  console.log('render:', playerType, screen);
+
+  const roomMap = {
+    host,
+    player,
   }
 
-  rooms[screen]();
+  roomMap[playerType][screen]();
 }
 
 export {

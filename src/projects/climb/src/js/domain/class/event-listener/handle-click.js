@@ -1,6 +1,6 @@
 // import joinGame from './join-game';
 // import { newGameHost } from '../action/new-game-host';
-import { newGame } from '../action/new-game';
+import { newGame } from '../../action/new-game';
 // import startGame from './start-game';
 
 const actions = {
