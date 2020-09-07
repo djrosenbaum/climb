@@ -1,13 +1,17 @@
-import enterLobby from './lobby.js';
-import enterRules from './rules.js';
-import displayScreen from '../markup/display-screen';
+import lobby from './lobby.js';
+import game from './game.js';
+import displayScreen from '../../library/display-screen';
 
-export default function enterScreen(screen) {
+function enterRoom(screen) {
   const joinRoom = {
-    lobby: enterLobby,
-    rules: enterRules
+    lobby,
+    game,
   }
 
-  displayScreen(screen);
   joinRoom[screen]();
+  displayScreen(screen);
+}
+
+export {
+  enterRoom,
 }

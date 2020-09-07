@@ -1,5 +1,5 @@
 import app from '../app';
-import enterRoom from '../enter-room';
+import { enterRoom } from '../enter-room';
 
 export default async function handleJoinGame() {
   console.log('handling join game');
@@ -32,8 +32,8 @@ export default async function handleJoinGame() {
 function setPlayerName(snapshot) {
   console.log('setting player name');
   console.log(snapshot.val());
-  const { status } = snapshot.val() || {};
-  if (status !== 'waiting') {
+  const { screen } = snapshot.val() || {};
+  if (screen !== 'lobby') {
     // can only join a room waiting for players
     console.log('room is closed to new players');
     return;

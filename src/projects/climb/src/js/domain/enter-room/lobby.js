@@ -1,8 +1,10 @@
-import app from "../app";
-import enterRoom from '.';
+import { app } from "../app";
+// import enterRoom from '.';
 
-export default function enterLobby() {
+function Lobby() {
   console.log('hello i am in the lobby');
+  // document.querySelector('[data-screen="lobby"] .room-code').innerText = app.roomCode;
+
   setRoomCode();
   getAndSetPlayerList();
 }
@@ -19,7 +21,7 @@ function getAndSetPlayerList() {
       showEveryoneIsReadyButton();
     }
     app.room.child('players').on('value', onPlayerListUpdated);
-    app.room.child('status').on('value', onStatusUpdated);
+    app.room.child('screen').on('value', onScreenUpdated);
   });
 }
 
@@ -27,15 +29,6 @@ function onPlayerListUpdated(snapshot) {
   const playerList = snapshot.exists() ? snapshot.toJSON() : {};
   console.log('snapshot', playerList);
   updatePlayerList(playerList);
-}
-
-function onStatusUpdated(snapshot) {
-  console.log('on status updated snapshot:', snapshot);
-  const status = snapshot.toJSON();
-  if (status === 'rules') {
-    console.log('start the game!');
-    enterRoom('rules');
-  }
 }
 
 function updatePlayerList(playerList) {
@@ -47,3 +40,7 @@ function updatePlayerList(playerList) {
 function showEveryoneIsReadyButton() {
   document.querySelector('.start-game-wrapper').classList.remove('hidden');
 }
+
+export { 
+  Lobby,
+};

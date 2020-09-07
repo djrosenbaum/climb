@@ -1,7 +1,13 @@
-import setupDOM from './setup-dom';
-import setupState from './setup-state';
+// import setupDOM from './setup-dom';
+// import Game from './enter-room/game';
+// import Markup from './class/markup';
+import { EventListener } from './class/event-listener';
+import { app } from './app';
 
-export default async function init() {
-  await setupState();
-  await setupDOM();
+function init() {
+  app.eventListener = new EventListener();
+};
+
+export {
+  init
 }

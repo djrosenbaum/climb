@@ -1,6 +1,3 @@
-import app from './domain/app';
-import init from './domain/init';
-
-window.app = app;
+import { init } from './domain/init';
 
 document.addEventListener('DOMContentLoaded', init);
