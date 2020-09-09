@@ -8,6 +8,7 @@ function newGame() {
     canCreateNewGame = false;
     document.querySelector('[data-group="player"]').remove();
     app.host = new Host();
+    app.host.listen();
   }
 }
 
