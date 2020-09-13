@@ -3,11 +3,15 @@ import { Host } from '../class/host';
 
 let canCreateNewGame = true;
 
-function newGame() {
+async function newGame() {
+  if (app.host) {
+    return;
+  }
+
   if (canCreateNewGame) {
     canCreateNewGame = false;
     document.querySelector('[data-group="player"]').remove();
-    app.host = new Host();
+    app.host = await new Host();
     app.host.listen();
   }
 }

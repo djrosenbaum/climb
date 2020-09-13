@@ -4,22 +4,18 @@ import { onPlayerListUpdated } from './on-player-list-updated';
 import { render } from '../../render';
 import { app } from '../../app';
 
-function Host() {
+async function Host() {
   const code = createRoomCode();
   const ref = window.firebase.database().ref(`rooms/${code}`);
   let playerList = '';
   
   // remove room from firebase when disconnected
-  ref.onDisconnect().remove();
+  await ref.onDisconnect().remove();
   
   // set screen
-  ref.set({
+  await ref.set({
     screen: 'lobby',
   }).then(() => {
-    render({
-      playerType: 'host',
-      screen: 'lobby'
-    });
     displayScreen('lobby');
   });
 
