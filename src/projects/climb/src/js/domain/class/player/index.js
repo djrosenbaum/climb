@@ -1,5 +1,6 @@
 import { displayScreen } from '../../../library/display-screen';
 import { onPlayerListUpdated } from './on-player-list-updated';
+import { onScreenUpdated } from './on-screen-updated';
 import { app } from '../../app';
 
 async function Player({ code }) {
@@ -36,6 +37,7 @@ function listen() {
   console.log('listening');
   const { ref } = app.player;
   ref.child('players').on('value', onPlayerListUpdated);
+  ref.child('screen').on('value', onScreenUpdated);
 }
 
 export {
