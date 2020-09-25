@@ -4,8 +4,8 @@ export default async function handleStartGame() {
   console.log('start game');
 
   app.room.update({
-    status: 'rules',
+    screen: 'game',
   }).then(() => {
-    console.log('show the rules');
+    console.log('show the game');
   });
 }

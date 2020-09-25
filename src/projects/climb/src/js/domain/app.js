@@ -1,3 +1,6 @@
 const app = {};
+window.app = app;
 
-export default app;
+export {
+  app
+}

@@ -5,10 +5,20 @@
   <div class="container" data-screen="landing">
     <!--=include ./landing/landing.html -->
   </div>
-  <div class="container hidden" data-screen="lobby">
-    <!--=include ./lobby/index.html -->
+  <div data-group="host">
+    <div class="container hidden" data-screen="lobby">
+      <!--=include ./lobby/host.html -->
+    </div>
+    <div class="container hidden" data-screen="game_intro">
+      <!--=include ./game_intro/host.html -->
+    </div>
   </div>
-  <div class="container hidden" data-screen="rules">
-    <!--=include ./rules/index.html -->
+  <div data-group="player">
+    <div class="container hidden" data-screen="lobby">
+      <!--=include ./lobby/player.html -->
+    </div>
+    <div class="container hidden" data-screen="game_intro">
+      <!--=include ./game_intro/player.html -->
+    </div>
   </div>
 </div>
